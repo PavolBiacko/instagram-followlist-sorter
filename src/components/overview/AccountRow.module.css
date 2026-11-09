@@ -1,0 +1,106 @@
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.75rem 0 1.25rem;
+}
+
+.row:hover {
+  background: var(--fog);
+}
+
+.dragging {
+  opacity: 0.4;
+}
+
+.handle {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  height: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.handle:focus-visible {
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
+.text {
+  display: grid;
+  min-width: 0;
+}
+
+.username {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--ink-faint);
+  font-size: var(--text-xs);
+}
+
+.meta .dot:first-of-type {
+  margin-left: 0.2rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+/* Sits on the avatar's top-right edge. 1.25rem row padding + 36px avatar. */
+.badge {
+  position: absolute;
+  top: 6px;
+  left: calc(1.25rem + 24px);
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border: 2px solid var(--surface);
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 15px;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.row:hover .badge {
+  border-color: var(--fog);
+}
+
+.badge:hover {
+  background: var(--accent);
+}
+
+.actions {
+  display: flex;
+  gap: 0.1rem;
+  opacity: 0;
+}
+
+.row:hover .actions,
+.row:focus-within .actions {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .actions {
+    opacity: 1;
+  }
+}

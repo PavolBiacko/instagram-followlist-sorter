@@ -1,0 +1,183 @@
+.page {
+  display: grid;
+  gap: 3rem;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1rem;
+  font-size: var(--text-xl);
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--line);
+}
+
+.tile {
+  display: grid;
+  align-content: start;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem 1.1rem;
+  background: var(--surface);
+}
+
+.tile dt {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.tile dd {
+  margin: 0;
+}
+
+.tileValue {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.tileShare {
+  color: var(--ink-faint);
+  font-size: var(--text-xs);
+}
+
+.chartHeader {
+  margin-bottom: 1.25rem;
+}
+
+.chartHeader .sectionTitle {
+  margin-bottom: 0.25rem;
+}
+
+.note {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+.bars {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  list-style: none;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 13rem) minmax(0, 1fr) 4rem;
+  align-items: center;
+  gap: 1rem;
+  min-height: 36px;
+  padding: 0 0.25rem;
+  border-radius: var(--radius-sm);
+}
+
+.barRow:hover,
+.barRow:focus-visible {
+  background: var(--fog);
+}
+
+.barLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.swatch {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.track {
+  position: relative;
+  height: 14px;
+}
+
+/* Magnitude in one hue; the dot beside the name carries group identity. */
+.bar {
+  display: block;
+  width: calc(var(--share) * 100%);
+  min-width: 2px;
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+  background: var(--accent);
+}
+
+.barValue {
+  color: var(--ink);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sits just past the end of the bar, so it never covers the label or the value. */
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--share) * 100% + 12px);
+  transform: translateY(-50%);
+  z-index: 5;
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: #fff;
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Long bars: show the tooltip over the bar instead of past its end. */
+.tooltipFlipped {
+  left: auto;
+  right: calc((1 - var(--share)) * 100% + 12px);
+}
+
+.tooltip span {
+  color: rgb(255 255 255 / 0.78);
+}
+
+@media (max-width: 860px) {
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .barRow {
+    grid-template-columns: minmax(0, 1fr) 3rem;
+    gap: 0.3rem 0.75rem;
+    padding: 0.4rem 0.25rem;
+  }
+
+  .track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}

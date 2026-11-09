@@ -1,0 +1,66 @@
+.menu ul {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.heading {
+  margin: 0.25rem 0.5rem 0.5rem;
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.empty {
+  margin: 0.25rem 0.5rem 0.5rem;
+  font-size: var(--text-sm);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: color-mix(in srgb, var(--group) 14%, var(--surface));
+}
+
+.check {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--group);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.option[aria-checked="true"] .check {
+  background: var(--group);
+}
+
+.name {
+  flex: 1;
+  overflow: hidden;
+  font-size: var(--text-sm);
+  font-weight: 550;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.count {
+  color: var(--ink-faint);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}

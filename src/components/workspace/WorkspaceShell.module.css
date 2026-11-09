@@ -1,0 +1,29 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.main {
+  flex: 1;
+  min-height: 0;
+}
+
+.notice {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  max-width: 30rem;
+  margin: 18vh auto 0;
+  padding: 0 1.5rem;
+}
+
+.notice h1 {
+  margin-top: 1.5rem;
+  font-size: var(--text-xl);
+}
+
+.notice p {
+  margin: 0;
+  color: var(--ink-soft);
+}

@@ -1,0 +1,39 @@
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.mark {
+  display: grid;
+  gap: 3px;
+}
+
+.mark span {
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.mark span:nth-child(1) {
+  background: #6f9e7f;
+}
+
+.mark span:nth-child(2) {
+  margin-left: 5px;
+  width: 9px;
+  background: #6e86b8;
+}
+
+.mark span:nth-child(3) {
+  margin-left: 2px;
+  width: 12px;
+  background: #c49a45;
+}

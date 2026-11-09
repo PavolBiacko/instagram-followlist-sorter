@@ -1,0 +1,16 @@
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: oklch(0.9 0.045 var(--hue));
+  color: oklch(0.4 0.08 var(--hue));
+  font-family: var(--font-display);
+  font-size: calc(var(--size) * 0.36);
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  object-fit: cover;
+  user-select: none;
+}

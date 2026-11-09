@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: min(100%, 26rem);
+}
+
+.form input {
+  flex: 1;
+  min-width: 0;
+}
+
+.form :global(.button) {
+  height: 38px;
+}
+
+.colorButton {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 3px solid var(--surface);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--line-strong);
+  cursor: pointer;
+}
+
+.colorPanel {
+  padding: 0.35rem;
+}

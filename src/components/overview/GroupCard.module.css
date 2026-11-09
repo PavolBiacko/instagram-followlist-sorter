@@ -1,0 +1,174 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  border-top: 4px solid var(--group);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--group) 11%, var(--surface));
+  transition: background 120ms, box-shadow 120ms;
+}
+
+.over {
+  background: color-mix(in srgb, var(--group) 24%, var(--surface));
+  box-shadow: 0 0 0 2px var(--group);
+}
+
+.overTaken {
+  box-shadow: 0 0 0 2px var(--line-strong);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.5rem 0.5rem 1rem;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--text-lg);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.count {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  margin: 0 0.75rem 0.75rem;
+  border: 1.5px dashed color-mix(in srgb, var(--group) 55%, var(--surface));
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+
+.members {
+  display: grid;
+  gap: 2px;
+  max-height: 320px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0 0.5rem 0.6rem;
+  list-style: none;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+}
+
+.member:hover {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.memberDragging {
+  opacity: 0.4;
+}
+
+.memberHandle {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  padding: 0.25rem 0.4rem;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.memberName {
+  overflow: hidden;
+  font-size: var(--text-sm);
+  font-weight: 550;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.remove {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-right: 0.15rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  opacity: 0;
+}
+
+.member:hover .remove,
+.remove:focus-visible {
+  opacity: 1;
+}
+
+.remove:hover {
+  background: rgb(29 35 48 / 0.08);
+  color: var(--ink);
+}
+
+@media (hover: none) {
+  .remove {
+    opacity: 1;
+  }
+}
+
+.dropNote {
+  margin: 0 1rem 0.75rem;
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+}
+
+/* Edit menu */
+.menu {
+  display: grid;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.menuLabel {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--ink-soft);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.renameForm {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.renameForm :global(.button) {
+  justify-self: start;
+}
+
+.deleteRow {
+  display: grid;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  font-size: var(--text-sm);
+}
+
+.deleteRow :global(.button) {
+  justify-self: start;
+}
+
+.deleteRow :global(.button-ghost) {
+  margin-left: -0.6rem;
+  color: var(--danger);
+}

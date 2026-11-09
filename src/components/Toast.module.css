@@ -1,0 +1,32 @@
+.stack {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  gap: 0.5rem;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.toast {
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--ink);
+  color: #fff;
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-pop);
+  animation: enter 160ms ease-out;
+  max-width: min(90vw, 420px);
+}
+
+.error {
+  background: var(--danger);
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}

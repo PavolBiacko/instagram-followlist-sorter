@@ -1,0 +1,11 @@
+.panel {
+  position: fixed;
+  z-index: 50;
+  max-height: min(420px, 70vh);
+  overflow: auto;
+  padding: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-pop);
+}
