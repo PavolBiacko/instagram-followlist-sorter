@@ -4,14 +4,18 @@ import * as schema from "./schema";
 
 export type Database = NodePgDatabase<typeof schema>;
 
-const DEFAULT_URL = "postgres://followlist:followlist@localhost:5432/followlist";
+const DEFAULT_URL =
+  "postgres://followlist:followlist@localhost:5432/followlist";
 
 // Reuse one pool across hot reloads in development.
 const globalForDb = globalThis as unknown as { followlistPool?: Pool };
 
 const pool =
   globalForDb.followlistPool ??
-  new Pool({ connectionString: process.env.DATABASE_URL ?? DEFAULT_URL, max: 10 });
+  new Pool({
+    connectionString: process.env.DATABASE_URL ?? DEFAULT_URL,
+    max: process.env.VERCEL ? 3 : 10,
+  });
 
 if (process.env.NODE_ENV !== "production") {
   globalForDb.followlistPool = pool;
